@@ -18,5 +18,4 @@ Remotely from the Proxmox host you can utilize the guest agent to push commands 
 
 `qm guest exec $VMID -- <COMMAND>`
 
-Example: `qm guest exec $VMID -- docker compose down`
-
+Example: `qm guest exec $VMID -- docker compose -f /Docker/docker-compose.yaml up -d`
