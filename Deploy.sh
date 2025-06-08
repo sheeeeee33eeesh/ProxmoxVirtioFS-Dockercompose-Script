@@ -17,7 +17,7 @@ sudo qm create $VMID --name "debian-12-template-docker" --ostype l26 \
     --bios ovmf --machine q35 --efidisk0 $STORAGE:0,pre-enrolled-keys=0 \
     --cpu x86-64-v2-AES --cores 2 --numa 1 \
     --vga serial0 --serial0 socket  \
-    --virtiofs0 $VIRTIOFS,cache=always,direct-io=1,expose-acl=1 \
+    --virtiofs0 $VIRTIOFS,cache=never,direct-io=1,expose-acl=1 \
     --net0 virtio,bridge=vmbr0,mtu=1
 sudo qm importdisk $VMID  debian-12.qcow2 $STORAGE
 sudo qm set $VMID --scsihw virtio-scsi-pci --virtio0 $STORAGE:vm-$VMID-disk-1,discard=on
